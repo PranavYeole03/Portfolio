@@ -12,34 +12,26 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_w2khj2h", //  EmailJS Service ID
-        "template_07bcku8", //  EmailJS Template ID
+        "service_w2khj2h",
+        "template_07bcku8",
         form.current,
-        "ucGjZGxbJL_edLaCf", //  EmailJS Public Key
+        "SHe0_sB3X40uSwgE8",
       )
       .then(
-        () => {
-          setIsSent(true);
-          form.current.reset(); // Reset form fields after sending
+        (result) => {
+          console.log("EMAIL SENT:", result.text);
+          form.current.reset();
           toast.success("Message sent successfully! ✅", {
             position: "top-right",
             autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "Light",
+            theme: "light",
           });
         },
         (error) => {
-          console.error("Error sending message:", error);
-          toast.error("Failed to send message. Please try again.", {
+          console.error("EMAIL ERROR:", error.text);
+          toast.error("Failed to send message ❌", {
             position: "top-right",
             autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
             theme: "dark",
           });
         },
