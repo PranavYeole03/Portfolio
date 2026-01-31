@@ -29,7 +29,7 @@ import Cricket from "./assets/ProjectImages/Cricket.png";
 import oxGame from "./assets/ProjectImages/OX Game.png";
 import ToDo from "./assets/ProjectImages/ToDo WebSite.png";
 import logo from "./assets/ProjectImages/logo.png";
-import fletto from "./assets/ProjectImages/fletto.png";
+import fletto from "./assets/ProjectImages/Fletto.png";
 import SIBMT from './assets/Education/SIBMTLOGO.jpg';
 import bytco from "./assets/Education/bytco.jfif";
 import School from "./assets/Education/Abhinavlogo.png";
