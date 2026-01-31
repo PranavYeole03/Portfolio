@@ -29,6 +29,7 @@ import Cricket from "./assets/ProjectImages/Cricket.png";
 import oxGame from "./assets/ProjectImages/OX Game.png";
 import ToDo from "./assets/ProjectImages/ToDo WebSite.png";
 import logo from "./assets/ProjectImages/logo.png";
+import fletto from "./assets/ProjectImages/fletto.png";
 import SIBMT from './assets/Education/SIBMTLOGO.jpg';
 import bytco from "./assets/Education/bytco.jfif";
 import School from "./assets/Education/Abhinavlogo.png";
@@ -177,5 +178,15 @@ export const projects = [
       tags: ["React JS", "Node.js", "MongoDB", "Express","API"],
       github: "https://github.com/PranavYeole03/ShopFinity-Full-Stack-MERN-Application-",
       webapp: "https://shopfinity-full-stack-mern-application-xqcx.onrender.com/",
+    },
+    {
+      id: 5,
+      title: "Fletto Food-Delivery-Service",
+      description:
+        "Fletto is a smart food ordering and delivery platform designed for restaurants, customers, and delivery partners.It simplifies order management with real-time tracking and smooth dashboard experiences for all roles.Restaurant owners can manage menus and orders efficiently, while users enjoy quick and easy ordering.Delivery partners get clear order details and fast confirmation for seamless deliveries..",
+      image: fletto,
+      tags: ["React JS", "Node.js", "MongoDB", "Express","API"],
+      github: "https://github.com/PranavYeole03/Food-Delivery-Website",
+      webapp: "https://food-delivery-website-fletto.onrender.com/",
     },
 ];
