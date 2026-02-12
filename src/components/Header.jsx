@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -7,7 +7,19 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll for navbar background
+  const menuItems = useMemo(
+    () => [
+      { id: "about", label: "About" },
+      { id: "skills", label: "Skills" },
+      { id: "experience", label: "Experience" },
+      { id: "work", label: "Projects" },
+      { id: "education", label: "Education" },
+      { id: "contact", label: "Contact" },
+    ],
+    [],
+  );
+
+  // Navbar blur on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -17,25 +29,42 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to section
+  // 🔥 Improved active section detection (Fix for Projects & Education)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-100px 0px -40% 0px",
+        threshold: 0.1,
+      },
+    );
+
+    menuItems.forEach((item) => {
+      const section = document.getElementById(item.id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [menuItems]);
+
+  // Scroll on click
   const handleMenuItemClick = (sectionId) => {
-    setActiveSection(sectionId);
     setOpen(false);
 
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
-
-  const menuItems = [
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
-    { id: "work", label: "Projects" },
-    { id: "education", label: "Education" },
-    { id: "contact", label: "Contact" },
-  ];
 
   return (
     <nav
@@ -47,24 +76,23 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      {/* Navbar Content */}
       <div className="text-white py-5 flex justify-between items-center">
         {/* Logo */}
         <div className="text-lg font-semibold cursor-pointer">Pranav Yeole</div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-300">
+        <ul className="hidden md:flex space-x-8">
           {menuItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleMenuItemClick(item.id)}
-                className={`hover:text-[#8245ec] transition-colors         ${
-                    activeSection === item.id
-                      ? "text-white"
-                      : scrolled
+                className={`transition-colors ${
+                  activeSection === item.id
+                    ? "text-[#8245ec]"
+                    : scrolled
                       ? "text-gray-300 hover:text-white"
                       : "text-gray-400 hover:text-white"
-                  }`}
+                }`}
               >
                 {item.label}
               </button>
@@ -72,7 +100,7 @@ const Header = () => {
           ))}
         </ul>
 
-        {/* Social Icons (Desktop) */}
+        {/* Social Icons Desktop */}
         <div className="hidden md:flex space-x-4">
           <a
             href="https://github.com/PranavYeole03"
@@ -93,7 +121,7 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Icon */}
+        {/* Mobile Icon */}
         <div className="md:hidden">
           {open ? (
             <FiX
@@ -113,17 +141,17 @@ const Header = () => {
       {open && (
         <div
           className="absolute top-16 left-1/2 -translate-x-1/2 w-4/5
-        bg-white/80 backdrop-blur-lg rounded-lg shadow-lg md:hidden"
+  bg-[#0f0f1a] rounded-xl shadow-xl border border-white/10 md:hidden"
         >
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-800">
+          <ul className="flex flex-col items-center space-y-5 py-5 text-white">
             {menuItems.map((item) => (
               <li key={item.id}>
                 <button
                   onClick={() => handleMenuItemClick(item.id)}
-                  className={`hover:text-purple-400 transition-colors ${
+                  className={`transition-colors text-lg ${
                     activeSection === item.id
-                      ? "text-purple-600"
-                      : "text-gray-700"
+                      ? "text-[#8245ec] font-semibold"
+                      : "text-gray-300 hover:text-white"
                   }`}
                 >
                   {item.label}
