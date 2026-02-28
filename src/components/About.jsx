@@ -50,7 +50,7 @@ const About = () => {
           </p>
 
           <a
-            href="https://drive.google.com/file/d/1gDs9Z9syMlC0JgLs7XNh2RM9m-4hw_gB/view"
+            href="/Pranav_Yeole_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold
