@@ -3,6 +3,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   // Smooth scroll function
   const handleScroll = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -56,7 +57,7 @@ const Footer = () => {
 
         {/* Copyright Text */}
         <p className="text-sm text-gray-400 mt-6">
-          © 2025 Pranav Yeole. All rights reserved.
+          © {currentYear} Pranav Yeole. All rights reserved.
         </p>
       </div>
     </footer>
