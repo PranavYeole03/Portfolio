@@ -2,13 +2,18 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ClipLoader from "react-spinners/ClipLoader";
+import confetti from "canvas-confetti";
+import { useWindowSize } from "react-use";
 
 const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true)
 
     emailjs
       .sendForm(
@@ -21,6 +26,8 @@ const Contact = () => {
         (result) => {
           console.log("EMAIL SENT:", result.text);
           form.current.reset();
+          setLoading(false)
+          fireSideConfetti();
           toast.success("Message sent successfully! ✅", {
             position: "top-right",
             autoClose: 3000,
@@ -34,8 +41,37 @@ const Contact = () => {
             autoClose: 3000,
             theme: "dark",
           });
+          setLoading(false)
         },
       );
+  };
+  const fireSideConfetti = () => {
+    const duration = 3000;
+    const animationEnd = Date.now() + duration;
+
+    const interval = setInterval(() => {
+      if (Date.now() > animationEnd) {
+        clearInterval(interval);
+        return;
+      }
+
+      // Left side blast
+      confetti({
+        particleCount: 6,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0 },
+      });
+
+      // Right side blast
+      confetti({
+        particleCount: 6,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1 },
+      });
+
+    }, 150);
   };
 
   return (
@@ -100,8 +136,10 @@ const Contact = () => {
           <button
             type="submit"
             className="w-full bg-linear-to-r from-green-600 to-green-500 py-3 text-white font-semibold rounded-md hover:opacity-90 transition"
+            disabled={loading}
           >
-            Send
+            {loading && <ClipLoader size={20} color="#fff" />}
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </div>
