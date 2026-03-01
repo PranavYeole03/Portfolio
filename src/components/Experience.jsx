@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
@@ -7,7 +8,11 @@ const Experience = () => {
       className="py-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }} className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
@@ -15,13 +20,30 @@ const Experience = () => {
           certifications that reflect my continuous learning and practical
           skills as a fresher.
         </p>
-      </div>
+      </motion.div>
 
       {/* Experience Content */}
-      <div className="max-w-4xl mx-auto space-y-10 text-gray-300">
-        
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.25,
+            },
+          },
+        }} className="max-w-4xl mx-auto space-y-10 text-gray-300">
+
         {/* Project-Based Experience */}
-        <div>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+        >
           <h3 className="text-2xl font-semibold text-white mb-4">
             Project-Based Experience (MERN Stack)
           </h3>
@@ -43,10 +65,16 @@ const Experience = () => {
               Deployed applications on platforms like Netlify and Render.
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Certifications */}
-        <div>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+        >
           <h3 className="text-2xl font-semibold text-white mb-4">
             Certifications & Academic Learning
           </h3>
@@ -56,10 +84,16 @@ const Experience = () => {
             <li>Java (Problem Solving) – HackerRank</li>
             <li>Python Programming – HackerRank</li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Tools & Technologies */}
-        <div>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+        >
           <h3 className="text-2xl font-semibold text-white mb-4">
             Tools & Technologies
           </h3>
@@ -67,8 +101,8 @@ const Experience = () => {
             React, Node.js, Express, MongoDB, JavaScript, Java, Python, Tailwind
             CSS, Git, GitHub, Postman
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

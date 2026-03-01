@@ -7,15 +7,16 @@ import Work from "./components/Work";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-// import BlurBlob from "./components/BlurBlob";
+import BlurBlob from "./components/BlurBlob";
 
 function App() {
   return (
-    <div className="bg-[#0f1115] min-h-screen text-white">
-      {/* <BlurBlob
-        position={{ top: "35%", left: "20%" }}
-        size={{ width: "30%", height: "40%" }}
-      /> */}
+    <div className="relative bg-[#0f1115] min-h-screen text-white overflow-x-hidden">
+<BlurBlob
+  position={{ top: "50%", left: "50%" }}
+  size={{ width: "500px", height: "500px" }}
+  color="bg-purple-600"
+/>
 
       {/* Neutral lightweight grid overlay */}
       <div

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -67,18 +68,25 @@ const Header = () => {
   };
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-300
-      px-[7vw] lg:px-[20vw]
-      ${
-        scrolled
+  px-[7vw] lg:px-[20vw]
+  ${scrolled
           ? "bg-white/20 backdrop-blur-lg shadow-[0_4px_20px_rgba(130,69,236,0.15)]"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="text-white py-5 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-lg font-semibold cursor-pointer">Pranav Yeole</div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-lg font-semibold cursor-pointer"
+          onClick={() => handleMenuItemClick("about")}>Pranav Yeole</motion.div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8">
@@ -86,13 +94,12 @@ const Header = () => {
             <li key={item.id}>
               <button
                 onClick={() => handleMenuItemClick(item.id)}
-                className={`transition-colors ${
-                  activeSection === item.id
-                    ? "text-[#8245ec]"
-                    : scrolled
-                      ? "text-gray-300 hover:text-white"
-                      : "text-gray-400 hover:text-white"
-                }`}
+                className={`transition-colors ${activeSection === item.id
+                  ? "text-[#8245ec]"
+                  : scrolled
+                    ? "text-gray-300 hover:text-white"
+                    : "text-gray-400 hover:text-white"
+                  }`}
               >
                 {item.label}
               </button>
@@ -139,7 +146,11 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
           className="absolute top-16 left-1/2 -translate-x-1/2 w-4/5
   bg-[#0f0f1a] rounded-xl shadow-xl border border-white/10 md:hidden"
         >
@@ -148,11 +159,10 @@ const Header = () => {
               <li key={item.id}>
                 <button
                   onClick={() => handleMenuItemClick(item.id)}
-                  className={`transition-colors text-lg ${
-                    activeSection === item.id
-                      ? "text-[#8245ec] font-semibold"
-                      : "text-gray-300 hover:text-white"
-                  }`}
+                  className={`transition-colors text-lg ${activeSection === item.id
+                    ? "text-[#8245ec] font-semibold"
+                    : "text-gray-300 hover:text-white"
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -176,9 +186,9 @@ const Header = () => {
               </a>
             </div>
           </ul>
-        </div>
+        </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

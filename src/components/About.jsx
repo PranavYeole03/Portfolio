@@ -2,6 +2,7 @@ import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import profileImage from "../assets/WebsiteLogo.png";
 import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -11,7 +12,12 @@ const About = () => {
     >
       <div className="flex flex-col-reverse md:flex-row justify-between items-center">
         {/* Left Side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
             Hi, I am
           </h1>
@@ -50,8 +56,7 @@ const About = () => {
           </p>
 
           <a
-            href="/Pranav_Yeole_Resume.pdf"
-            target="_blank"
+            href="/Pranav_Yeole_Resume.pdf" target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold
                        transition-transform duration-300 hover:scale-105"
@@ -62,10 +67,14 @@ const About = () => {
           >
             RESUME
           </a>
-        </div>
+        </motion.div>
 
         {/* Right Side */}
-        <div className="md:w-1/2 flex justify-center md:justify-end">
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }} className="md:w-1/2 flex justify-center md:justify-end">
           <Tilt
             className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72
                        border-4 border-gray-400 rounded-full overflow-hidden"
@@ -83,7 +92,7 @@ const About = () => {
                          drop-shadow-[0_10px_25px_rgba(130,69,236,0.5)]"
             />
           </Tilt>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

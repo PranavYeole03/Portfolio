@@ -1,5 +1,6 @@
 import React from "react";
 import { education } from "../constants";
+import { motion } from "framer-motion";
 
 const Education = () => {
   return (
@@ -8,15 +9,20 @@ const Education = () => {
       className="py-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
           My education has been a journey of learning and development. Here are
           the details of my academic background
         </p>
-      </div>
-
+      </motion.div>
       {/* Timeline Wrapper */}
       <div className="relative">
         {/* Vertical Line */}
@@ -24,11 +30,17 @@ const Education = () => {
 
         {/* Education Entries */}
         {education.map((edu, index) => (
-          <div
-            key={edu.id}
-            className={`relative flex flex-col sm:flex-row items-center mb-24 ${
-              index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
-            }`}
+          <motion.div
+  key={edu.id}
+  initial={{
+    opacity: 0,
+    x: index % 2 === 0 ? -60 : 60,
+  }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+            className={`relative flex flex-col sm:flex-row items-center mb-24 ${index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
+              }`}
           >
             {/* Timeline Circle */}
             <div
@@ -51,11 +63,10 @@ const Education = () => {
               bg-gray-900 border border-white
               shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]
               transform transition-transform duration-300 hover:scale-105
-              ${
-                index % 2 === 0
+              ${index % 2 === 0
                   ? "sm:mr-auto sm:pr-12"
                   : "sm:ml-auto sm:pl-12"
-              }`}
+                }`}
             >
               {/* Header */}
               <div className="flex items-center space-x-6">
@@ -81,7 +92,7 @@ const Education = () => {
               </p>
               <p className="mt-2 text-gray-400">{edu.desc}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
