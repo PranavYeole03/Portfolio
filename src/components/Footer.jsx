@@ -4,11 +4,8 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-<<<<<<< HEAD
-  // Smooth scroll function
-=======
 
->>>>>>> 4f934f2 (update message)
+  // Smooth scroll function
   const handleScroll = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -75,13 +72,8 @@ const Footer = () => {
           </a>
         </motion.div>
 
-<<<<<<< HEAD
-        {/* Copyright Text */}
-        <p className="text-sm text-gray-400 mt-6">
-=======
         {/* Copyright */}
         <p className="text-sm text-zinc-400 mt-6 hover:text-white transition-colors">
->>>>>>> 4f934f2 (update message)
           © {currentYear} Pranav Yeole. All rights reserved.
         </p>
       </div>
