@@ -11,7 +11,7 @@ import BlurBlob from "./components/BlurBlob";
 
 function App() {
   return (
-    <div className="relative bg-[#0f1115] min-h-screen text-white overflow-x-hidden">
+    <div className="relative bg-[#0f1115] min-h-screen text-white">
 <BlurBlob
   position={{ top: "50%", left: "50%" }}
   size={{ width: "500px", height: "500px" }}
