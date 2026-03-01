@@ -11,7 +11,7 @@ import BlurBlob from "./components/BlurBlob";
 
 function App() {
   return (
-    <div className="relative bg-[#0f1115] min-h-screen text-white overflow-x-hidden">
+    <div className="relative bg-[#0f1115] min-h-screen text-white overflow-hidden">
       <BlurBlob
         position={{ top: "50%", left: "50%" }}
         size={{ width: "500px", height: "500px" }}
@@ -20,7 +20,7 @@ function App() {
 
       {/* Neutral lightweight grid overlay */}
       <div
-        className="absolute inset-0 z-0
+        className="absolute inset-0 
         bg-[linear-gradient(to_right,#ffffff14_1px,transparent_1px),
         linear-gradient(to_bottom,#ffffff14_1px,transparent_1px)]
         bg-size-[14px_24px]

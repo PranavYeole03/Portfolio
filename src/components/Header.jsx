@@ -265,7 +265,7 @@ const Header = () => {
 
   return (
   <nav
-  className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300
+  className={`fixed top-0 left-0 w-full z-999 transition-all duration-300
   px-[7vw] lg:px-[20vw]
   bg-[#0f1115]/95 backdrop-blur-lg shadow-md`}
 >

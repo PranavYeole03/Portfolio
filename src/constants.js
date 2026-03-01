@@ -93,7 +93,7 @@ export const education = [
     img: SIBMT,
     school: "SIBMT,Pune",
     date: "Sep-2024 Pursuing",
-    grade: "-",
+    grade: "Pursuing",
     desc: "I am currently pursuing my Master's degree (MCA) in Computer Applications from Savitri Bai Phule University, Pune. Through this program, I am building a strong foundation in programming, software development, and core computer science concepts. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering.",
     degree: "Master of Computer Applications(MCA)",
   },
