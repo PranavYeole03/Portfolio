@@ -111,15 +111,20 @@ const Contact = () => {
               my MERN stack skills and contribute to impactful projects.
             </p>
 
-            <div className="space-y-3 text-gray-300">
-              <div className="flex justify-between border-b border-white/10 pb-2">
-                <span>Email</span>
-                <span className="text-white">yeolepranav13@gmail.com</span>
+            <div className="space-y-4 text-gray-300">
+
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-white/10 pb-3">
+                <span className="text-sm text-gray-400">Email</span>
+                <span className="text-white font-medium break-all">
+                  yeolepranav13@gmail.com
+                </span>
               </div>
 
-              <div className="flex justify-between">
-                <span>Location</span>
-                <span className="text-white">Pune, India</span>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                <span className="text-sm text-gray-400">Location</span>
+                <span className="text-white font-medium">
+                  Pune, India
+                </span>
               </div>
             </div>
           </div>

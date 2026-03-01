@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 px-4 sm:px-6 md:px-12 lg:px-20 font-sans bg-skills-gradient overflow-hidden"
+      className="py-20 px-4 sm:px-6 md:px-10 lg:px-16 font-sans bg-skills-gradient"
     >
       {/* Section Title */}
       <motion.div
@@ -24,7 +24,7 @@ const Education = () => {
       </motion.div>
 
       {/* Grid Layout */}
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
         {education.map((edu) => (
           <motion.div
             key={edu.id}
@@ -32,9 +32,9 @@ const Education = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="p-6 rounded-2xl bg-gray-900 border border-white
-            shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]
-            hover:scale-105 transition-transform duration-300"
+            className="p-5 rounded-xl bg-gray-900 border border-white/10
+shadow-[0_0_18px_rgba(130,69,236,0.25)]
+hover:scale-[1.015] transition-all duration-300"
           >
             {/* Header */}
             <div className="flex items-center gap-5">
