@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient"
+      className="py-24 px-4 sm:px-6 md:px-12 lg:px-20 font-sans bg-skills-gradient overflow-hidden"
     >
       {/* Section Title */}
       <motion.div
