@@ -56,7 +56,7 @@ const About = () => {
           </p>
 
           <a
-            href="/Pranav_Yeole_Resume.pdf" target="_blank"
+            href="/Pranav_Yeole(Resume).pdf" target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold
                        transition-transform duration-300 hover:scale-105"
