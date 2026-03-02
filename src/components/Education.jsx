@@ -33,8 +33,8 @@ const Education = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="p-5 rounded-xl bg-gray-900 border border-white/10
-shadow-[0_0_18px_rgba(130,69,236,0.25)]
-hover:scale-[1.015] transition-all duration-300"
+                       shadow-[0_0_18px_rgba(130,69,236,0.25)]
+                       hover:scale-[1.015] transition-all duration-300"
           >
             {/* Header */}
             <div className="flex items-center gap-5">

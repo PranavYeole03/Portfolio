@@ -45,13 +45,23 @@ const Skills = () => {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6 }}
-
-          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6
-                       w-full sm:w-[48%] lg:w-[45%]
-                       rounded-2xl border border-white
-                       shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
+          className="relative group
+bg-white/5 backdrop-blur-lg
+px-6 sm:px-10 py-8 sm:py-6
+w-full sm:w-[48%] lg:w-[45%]
+rounded-2xl
+border border-white/10
+transition-all duration-500
+hover:border-purple-500/40
+hover:shadow-[0_0_40px_rgba(130,69,236,0.25)]"
         >
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
+          <div className="absolute inset-0 rounded-2xl
+opacity-0 group-hover:opacity-100
+transition-all duration-700
+bg-linear-to-r from-transparent via-purple-500/10 to-transparent
+bg-size-[200%_100%] bg-left group-hover:bg-right
+pointer-events-none" />
+          <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-4 text-center">
             {category.title}
           </h3>
 
@@ -67,9 +77,14 @@ const Skills = () => {
               {category.skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex items-center justify-center gap-2 sm:gap-2 md:gap-2  lg:gap-1
-                               border-2 border-gray-600 rounded-3xl
-                               py-1 px-1 text-center"
+                  className="flex items-center justify-center gap-2
+bg-white/5 border border-white/10
+hover:border-purple-400
+hover:bg-purple-500/10
+hover:shadow-[0_0_15px_rgba(130,69,236,0.4)]
+rounded-full
+py-2 px-3
+transition-all duration-300"
                 >
                   <img
                     src={skill.logo}
