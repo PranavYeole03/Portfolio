@@ -55,21 +55,32 @@ const Work = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             onClick={() => handleOpenModal(project)}
-            // className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-purple-500/50 hover:-translate-y-2 transition-transform duration-300"
-            className="group bg-gray-900/80 backdrop-blur-sm rounded-xl border border-white/10 
-overflow-hidden cursor-pointer 
-hover:border-purple-500/40 
-hover:-translate-y-2 
-hover:shadow-[0_15px_40px_rgba(130,69,236,0.25)] 
-transition-all duration-300"
+            className="relative group 
+              bg-gray-900/70 backdrop-blur-xl 
+              rounded-xl 
+              border border-white/10
+              overflow-hidden cursor-pointer
+              transition-all duration-500
+              hover:border-purple-500/30
+              hover:shadow-[0_20px_60px_rgba(130,69,236,0.18)]
+              hover:-translate-y-2"
           >
+            {/* Animated light sweep */}
+            <div
+              className="absolute inset-0 rounded-xl
+              opacity-0 group-hover:opacity-100
+              transition-all duration-700
+              bg-linear-to-r from-transparent via-purple-500/10 to-transparent
+              bg-size-[200%_100%] bg-left group-hover:bg-right
+              pointer-events-none"
+            />
+
             <div className="p-4">
               <img
                 src={project.image}
                 alt={project.title}
-                // className="w-full h-48 object-cover rounded-xl"
                 className="w-full h-52 object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
               />
             </div>
@@ -79,7 +90,7 @@ transition-all duration-300"
                 {project.title}
               </h3>
 
-              <p className="text-gray-500 mb-4 pt-4 line-clamp-3">
+              <p className="text-gray-400 mb-4 pt-4 line-clamp-3">
                 {project.description}
               </p>
 
@@ -87,7 +98,6 @@ transition-all duration-300"
                 {project.tags.map((tag, index) => (
                   <span
                     key={index}
-                    // className="inline-block bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1 mr-2 mb-2"
                     className="inline-block bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full px-3 py-1 mr-2 mb-2"
                   >
                     {tag}
@@ -107,28 +117,31 @@ transition-all duration-300"
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleCloseModal}
-            className="fixed inset-0 z-50 bg-black bg-opacity-90 p-6 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm p-6 overflow-y-auto"
           >
             <div className="flex items-start justify-center min-h-full">
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
+                initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
+                exit={{ scale: 0.85, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-gray-900 rounded-xl shadow-2xl w-full max-w-4xl relative"
+                className="bg-gray-900/95 backdrop-blur-xl 
+                  rounded-2xl border border-white/10
+                  shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+                  w-full max-w-4xl relative"
               >
                 <div className="flex justify-end p-4">
                   <button
                     onClick={handleCloseModal}
-                    className="text-white text-3xl font-bold hover:text-purple-500"
+                    className="text-white text-3xl font-bold hover:text-purple-500 transition"
                   >
                     &times;
                   </button>
                 </div>
 
                 <div className="flex flex-col">
-                  <div className="w-full flex justify-center bg-gray-900 px-4">
+                  <div className="w-full flex justify-center px-4">
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
@@ -141,7 +154,7 @@ transition-all duration-300"
                       {selectedProject.title}
                     </h3>
 
-                    <p className="text-gray-400 mb-6 lg:text-base text-xs">
+                    <p className="text-gray-400 mb-6 lg:text-base text-sm">
                       {selectedProject.description}
                     </p>
 
@@ -149,7 +162,7 @@ transition-all duration-300"
                       {selectedProject.tags.map((tag, index) => (
                         <span
                           key={index}
-                          className="bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1"
+                          className="bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full px-3 py-1"
                         >
                           {tag}
                         </span>
@@ -161,7 +174,9 @@ transition-all duration-300"
                         href={selectedProject.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-400 lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
+                        className="w-1/2 bg-gray-800 hover:bg-purple-800 text-gray-300 
+                          lg:px-6 lg:py-2 px-3 py-2 rounded-xl 
+                          lg:text-lg text-sm font-semibold text-center transition"
                       >
                         View Code
                       </a>
@@ -170,7 +185,9 @@ transition-all duration-300"
                         href={selectedProject.webapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-1/2 bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-2 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center"
+                        className="w-1/2 bg-purple-600 hover:bg-purple-800 text-white 
+                          lg:px-6 lg:py-2 px-3 py-2 rounded-xl 
+                          lg:text-lg text-sm font-semibold text-center transition"
                       >
                         View Live
                       </a>
