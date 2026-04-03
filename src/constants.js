@@ -106,24 +106,6 @@ export const education = [
     desc: "I completed my Bachelor's degree in Computer Application (BCA) from Bytco College, Nashik. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. During my bachelor’s degree, I created several websites using HTML, CSS, and JavaScript, and I continue to enhance my skills through continuous learning.",
     degree: "Bachelor of Computer Application(BCA)",
   },
-  {
-    id: 2,
-    img: College,
-    school: "Science Junior College Lohoner",
-    date: "July 2020 - May 2021",
-    grade: "70%",
-    desc: "I completed my class 12 education from Science Junior College, Lohoner under the HSC board, where I studied Physics, Chemistry, and Mathematics (PCM).",
-    degree: "HSC",
-  },
-  {
-    id: 3,
-    img: School,
-    school: "Dr. Kakasaheb Purnapatre Madhyamik Vidyalaya,Chalisgaon",
-    date: "Apr 2015 - March 2016",
-    grade: "78.80%",
-    desc: "I completed my class 10 education from Abhinav School, Chalisgaon, under the SSC board, where I studied Science",
-    degree: "SSC",
-  },
 ];
 
 
@@ -140,37 +122,7 @@ export const projects = [
     webapp: "https://pranavyeole03.github.io/Calculator/",
   },
   {
-    id: 1,
-    title: "Cricket Game",
-    description:
-      "A fun, interactive cricket game built using HTML, CSS, and JavaScript, allowing users to play and simulate basic cricket actions through simple game logic and UI interactions.",
-    image: Cricket,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/PranavYeole03/Cricket-Games",
-    webapp: "https://pranavyeole03.github.io/Cricket-Games/",
-  },
-  {
-    id: 2,
-    title: "Tic Tac Toe Games",
-    description:
-      "This is a Tic Tac Toe game implemented using HTML, CSS, and vanilla JavaScript. The game supports two-player gameplay in the same browser, with intuitive UI interactions, win/draw detection, and real-time result updates. Designed to be responsive and lightweight, it runs smoothly on both desktop and mobile devices. The project is deployed on GitHub Pages for quick online access.",
-    image: oxGame,
-    tags: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/PranavYeole03/TicTac",
-    webapp: "https://pranavyeole03.github.io/TicTac/",
-  },
-    {
-      id: 3,
-      title: "ToDo WebSite",
-      description:
-        "A lightweight ToDo List application created with HTML, CSS, and vanilla JavaScript. This app allows users to add new tasks, mark tasks as complete, and delete tasks with immediate visual updates. It features a clean, user-friendly design and works smoothly across devices. The project is deployed using GitHub Pages for easy access.",
-      image: ToDo,
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/PranavYeole03/ToDo",
-      webapp: "https://pranavyeole03.github.io/ToDo/",
-    },
-    {
-      id: 4,
+      id: 1,
       title: "ShopFinity (Blinkit Clone)",
       description:
         "Shopfinity is a full-stack e-commerce application developed using MongoDB, Express.js, React, and Node.js (MERN stack). The application allows users to browse products, view details, manage cart items, and interact with a responsive, user-friendly interface. The backend handles API requests, data management, and server-side logic, while the frontend delivers a smooth and modern shopping experience. The project is fully deployed and accessible online.",
@@ -178,9 +130,9 @@ export const projects = [
       tags: ["React JS", "Node.js", "MongoDB", "Express","API"],
       github: "https://github.com/PranavYeole03/ShopFinity-Full-Stack-MERN-Application-",
       webapp: "https://shopfinity-full-stack-mern-application-xqcx.onrender.com/",
-    },
+  },
     {
-      id: 5,
+      id: 2,
       title: "Fletto Food-Delivery-Service",
       description:
         "Fletto is a smart food ordering and delivery platform designed for restaurants, customers, and delivery partners.It simplifies order management with real-time tracking and smooth dashboard experiences for all roles.Restaurant owners can manage menus and orders efficiently, while users enjoy quick and easy ordering.Delivery partners get clear order details and fast confirmation for seamless deliveries..",
