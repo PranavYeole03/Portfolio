@@ -25,15 +25,11 @@ import postgreLogo from "./assets/tech_logo/postgre.png";
 import renderLogo from "./assets/tech_logo/render-logo.png";
 import sqlLogo from "./assets/tech_logo/sql.png";
 import Calculator from "./assets/ProjectImages/Calculator.png";
-import Cricket from "./assets/ProjectImages/Cricket.png";
-import oxGame from "./assets/ProjectImages/OX Game.png";
-import ToDo from "./assets/ProjectImages/ToDo WebSite.png";
 import logo from "./assets/ProjectImages/logo.png";
 import fletto from "./assets/ProjectImages/Fletto.png";
 import SIBMT from './assets/Education/SIBMTLOGO.jpg';
 import bytco from "./assets/Education/bytco.jfif";
-import School from "./assets/Education/Abhinavlogo.png";
-import College from "./assets/Education/CollegeLogo.jpg";
+
 
 // Skill Type
 export const SkillsInfo = [
