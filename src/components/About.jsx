@@ -1,8 +1,9 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
-import profileImage from "../assets/WebsiteLogo.png";
+// import profileImage from "../assets/WebsiteLogo.png";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import profileImage from "../assets/Avatar.png";
 
 const About = () => {
   return (
@@ -56,7 +57,7 @@ const About = () => {
           </p>
 
           <a
-            href="/Pranav_Yeole_Resume.pdf" target="_blank"
+            href="/PranavYeoleResume.pdf" target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold
                        transition-transform duration-300 hover:scale-105"
