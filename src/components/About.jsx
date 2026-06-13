@@ -33,7 +33,8 @@ const About = () => {
             <span className="text-[#8245ec]">
               <Typewriter
                 words={[
-                  "Full-Stack Developer (MERN)",
+                  "Full-Stack Developer",
+                  "MERN Stack Developer",
                   "React Developer",
                   "Web Developer",
                   "Project-Based Learner",
@@ -66,7 +67,7 @@ const About = () => {
               boxShadow: "0 0 40px rgba(130,69,236,0.6)",
             }}
           >
-            RESUME
+           VIEW RESUME
           </a>
         </motion.div>
 
