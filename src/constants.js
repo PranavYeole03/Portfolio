@@ -135,6 +135,6 @@ export const projects = [
       image: fletto,
       tags: ["React JS", "Node.js", "MongoDB", "Express","API"],
       github: "https://github.com/PranavYeole03/Food-Delivery-Website",
-      webapp: "https://food-delivery-website-fletto.onrender.com/",
+      webapp: "https://food-delivery-website-1-mqzj.onrender.com/",
     },
 ];
